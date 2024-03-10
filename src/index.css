@@ -1,0 +1,311 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto');
+@font-face { font-family: RussoOne; src: url('./fonts/russoone-regular.ttf'); }
+@font-face { font-family: Caecilla; src: url('./fonts/Caecilia-Roman.otf'); }
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-y: scroll;
+}
+
+/* Common styles */
+/* Lets have a discussion on these later */
+
+h1 {
+  font-size: 3.5rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+p {
+  font-size: 1.1rem;
+  font-family: 'Ubuntu', sans-serif;
+  line-height: 1.25rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: #ffab00;
+  font-family: 'Akira Expanded', 'Archivo Black', 'Ubuntu', sans-serif;
+  margin: 0 1rem;
+}
+
+.Socials li {
+  display: inline-block;
+}
+
+.Socials a {
+  text-decoration: none;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+/* Discord Icon */
+.Discord-Icon {
+  width: 30px;
+  height: 30px;
+  background: url('./images/social_logos/Non-Colored/Discord_Icon.png')
+  no-repeat;
+  background-size: 30px 30px;
+  transition: all 0.1s ease-in-out;
+}
+
+.Discord-Icon:hover {
+  background: url('./images/social_logos/Colored/Discord_Icon.png') no-repeat;
+  background-size: 30px 30px;
+  transform: scale(1.05);
+}
+
+/* Instagram Icon */
+.Instagram-Icon {
+  width: 30px;
+  height: 30px;
+  background: url('./images/social_logos/Non-Colored/Instagram_Icon.png')
+  no-repeat;
+  background-size: 30px 30px;
+  transition: all 0.1s ease-in-out;
+}
+
+.Instagram-Icon:hover {
+  background: url('./images/social_logos/Colored/Instagram_Icon.png') no-repeat;
+  background-size: 30px 30px;
+  transform: scale(1.1);
+}
+
+/* Youtube Icon */
+.Youtube-Icon {
+  width: 30px;
+  height: 30px;
+  background: url('./images/social_logos/Non-Colored/YouTube_Icon.png')
+  no-repeat;
+  background-size: 30px 30px;
+  transition: all 0.1s ease-in-out;
+}
+
+.Youtube-Icon:hover {
+  background: url('./images/social_logos/Colored/YouTube_Icon.png') no-repeat;
+  background-size: 30px 30px;
+  transform: scale(1.1);
+}
+
+/* Twitter Icon */
+.Twitter-Icon {
+  width: 30px;
+  height: 30px;
+  background: url('./images/social_logos/Non-Colored/Twitter_Icon.png')
+  no-repeat;
+  background-size: 30px 30px;
+  display: inline-block;
+  transition: all 0.1s ease-in-out;
+}
+
+.Twitter-Icon:hover {
+  background: url('./images/social_logos/Colored/Twitter_Icon.png') no-repeat;
+  background-size: 30px 30px;
+  transform: scale(1.1);
+}
+
+/* Github Icon*/
+.Github-Icon {
+  width: 30px;
+  height: 30px;
+  background: url('./images/social_logos/Non-Colored/GitHub_Icon.png')
+  no-repeat;
+  background-size: 30px 30px;
+  display: inline-block;
+  transition: all 0.1s ease-in-out;
+}
+
+.Github-Icon:hover {
+  background: url('./images/social_logos/Colored/GitHub_Icon.png') no-repeat;
+  filter: brightness(135%);
+  background-size: 30px 30px;
+  transform: scale(1.1);
+}
+
+/* Patreon Icon*/
+.Patreon-Icon {
+  width: 30px;
+  height: 30px;
+  background: url('./images/social_logos/Non-Colored/Patreon_Icon.png')
+  no-repeat;
+  background-size: 30px 30px;
+  display: inline-block;
+  transition: all 0.1s ease-in-out;
+}
+
+.Patreon-Icon:hover {
+  background: url('./images/social_logos/Colored/Patreon_Icon.png') no-repeat;
+  background-size: 30px 30px;
+  transform: scale(1.1);
+}
+/* Styling for social icons */
+.social-icons {
+  margin-left: auto;
+}
+.social-icons a {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background-color: #333;
+  margin-left: 5px;
+  border-radius: 50%;
+  color: #fff;
+  text-align: center;
+  line-height: 25px;
+  text-decoration: none;
+}
+
+.header_logo {
+  background-image: url('./images/logos/logo-small.png');
+  background-size: 50px;
+  height: 50px;
+  width: 50px;
+  min-width: 50px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+/* Basic styling for header */
+header {
+  background-color: #151515;
+  display: flex;
+  align-items: center;
+  height: 60px;
+  border-bottom-color: #FFCE00;
+  border-width: 0;
+  border-bottom-width: 2px;
+  border-style: solid;
+}
+
+/* Styling for navigation tabs */
+.burger-nav {
+  list-style: none;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  background-color: #151515;
+  height: 100%;
+}
+.burger-dropdown {
+  display: none;
+  border-width: 0; border-bottom-width: 2px; border-style: solid; border-color: #FFCE00
+}
+.top-nav {
+  display: block;
+}
+.nav-bar-skeleton {
+  background-color: #151515;
+  min-height: 60px;
+  border-width: 0;
+  border-bottom: 2px;
+  border-style: solid;
+  border-color: #FFCE00;
+}
+nav {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+}
+
+.navlist{
+  list-style: none;
+  flex-direction: row;
+  height: 100%;
+  gap: 0px;
+}
+.navitem{
+  float: left;
+  padding: 0;
+  height: 100%;
+}
+.burgeritem {
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+}
+.navitem a{
+  text-decoration: none;
+  color: white;
+  font-family: RussoOne;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  height: 100%;
+}
+
+.navitem a:hover {
+  background-color: #4E1496;
+}
+
+/* Style for tab content */
+.tab-content .tab-item {
+  display: none;
+}
+.tab-content .tab-item.active {
+  display: block;
+}
+
+.burger-menu {
+  position: absolute;
+  right: 0;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  display: none;
+}
+.burger-menu img{
+  width: 30px;
+  height: 30px
+}
+
+.burger-menu:hover{
+  background-color: #4E1496;
+}
+
+@media only screen and (max-width: 1000px) {
+  .Header-Socials {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .burger-menu {
+    display: flex;
+  }
+  .top-nav {
+    display: none;
+  }
+}

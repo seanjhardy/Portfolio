@@ -1,0 +1,59 @@
+
+.scrollbar {
+    position: absolute;
+    width: 30px;
+    top: var(--scroll);
+    height: calc(100vh - 60px);
+    margin-top: 30px;
+    margin-bottom: 30px;
+    right: 0;
+    z-index: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: hidden;
+}
+
+.track {
+    height: 100%;
+    width: 2px;
+    background-color: #222222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.thumb {
+    position: absolute;
+    width: 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    top: var(--scroll);
+    z-index: 1000;
+    user-select: none;
+    background: rgb(97,27,189);
+    height: clamp(20px, calc((4 * var(--ratio) * (1 - var(--ratio))) * 100px), 100px);
+}
+
+.glow-point {
+    position: absolute;
+    -webkit-box-shadow:var(--glow-colour) 0 3px 10px 5px;
+    -moz-box-shadow: var(--glow-colour) 0 3px 10px 5px;
+    box-shadow: 92px 0px 0px 90px black,
+    -92px 0px 0px 90px black,
+    0px 0 15px var(--height) var(--glow-colour),
+    0px 0 15px var(--height) var(--glow-colour);
+    opacity: 1;
+    pointer-events: none;
+    animation: opacity var(--duration) ease-out forwards;
+}
+
+@keyframes opacity {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}

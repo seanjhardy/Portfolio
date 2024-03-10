@@ -1,0 +1,23 @@
+{
+  "name": "Seanjhardy's Portfolio",
+  "short_name": "Seanjhardy.com",
+  "description": "A portfolio of projects I've developed as a full-stack engineer and designer",
+  "keywords": ["Seanjhardy", "portfolio"],
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#151515",
+  "theme_color": "#009688",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "web"
+    }
+  ]
+}
+
