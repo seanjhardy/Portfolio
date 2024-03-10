@@ -1,0 +1,40 @@
+{
+  "files": {
+    "main.css": "/static/css/main.d8638e00.css",
+    "main.js": "/static/js/main.b5938b47.js",
+    "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
+    "static/media/hyper-life.mp4": "/static/media/hyper-life.977ac639994d78a7ee4d.mp4",
+    "static/media/particle-life.mp4": "/static/media/particle-life.34df669e19b869a5cef5.mp4",
+    "static/media/electric-fields.mp4": "/static/media/electric-fields.ac73767b00422effdf10.mp4",
+    "static/media/skilltree-card.mp4": "/static/media/skilltree-card.c06cc2b3b00372a7a1b7.mp4",
+    "static/media/robot.mp4": "/static/media/robot.1405237d5dba042640d3.mp4",
+    "static/media/me.png": "/static/media/me.c2c0d0902405a01a66db.png",
+    "static/media/asrv.webp": "/static/media/asrv.60e9fe07602128b5caac.webp",
+    "static/media/react-native.png": "/static/media/react-native.f6b89d232c9bc9f828e5.png",
+    "static/media/figma.png": "/static/media/figma.b08682c3a0753f59813f.png",
+    "static/media/java.png": "/static/media/java.284bca3c88f057b9ffdc.png",
+    "static/media/python.png": "/static/media/python.41259ded83ae0f2a4243.png",
+    "static/media/russoone-regular.ttf": "/static/media/russoone-regular.b2f5b287ccb8fd446eae.ttf",
+    "static/media/Caecilia-Roman.otf": "/static/media/Caecilia-Roman.058338f59c06688ea234.otf",
+    "static/media/nodejs.png": "/static/media/nodejs.e328955d6bbbf3ebc72b.png",
+    "static/media/logo-small.png": "/static/media/logo-small.6f5a5ec20ce1527855aa.png",
+    "static/media/firebase.png": "/static/media/firebase.eb0f694b0397db6b58c3.png",
+    "static/media/typescript.png": "/static/media/typescript.0f1cc93b573e0ea540dc.png",
+    "static/media/flutter.png": "/static/media/flutter.d522d8ca531e77debd54.png",
+    "static/media/Instagram_Icon.png": "/static/media/Instagram_Icon.28e382aa3f662473aea9.png",
+    "static/media/Patreon_Icon.png": "/static/media/Patreon_Icon.08cdd8d587be39671fb5.png",
+    "static/media/GitHub_Icon.png": "/static/media/GitHub_Icon.d5c528c6c29a8d97d71f.png",
+    "static/media/mongoDB.png": "/static/media/mongoDB.2178943141ba7e7fae4e.png",
+    "static/media/Discord_Icon.png": "/static/media/Discord_Icon.80df9463925ede846ba2.png",
+    "static/media/css.png": "/static/media/css.87f5b197963ce41cf34e.png",
+    "static/media/javascript.webp": "/static/media/javascript.2888c0a080c1a9d407b0.webp",
+    "index.html": "/index.html",
+    "main.d8638e00.css.map": "/static/css/main.d8638e00.css.map",
+    "main.b5938b47.js.map": "/static/js/main.b5938b47.js.map",
+    "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d8638e00.css",
+    "static/js/main.b5938b47.js"
+  ]
+}
