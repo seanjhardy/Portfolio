@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.d8638e00.css",
-    "main.js": "/static/js/main.b5938b47.js",
+    "main.css": "/static/css/main.777767c3.css",
+    "main.js": "/static/js/main.87d5179d.js",
     "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
     "static/media/hyper-life.mp4": "/static/media/hyper-life.977ac639994d78a7ee4d.mp4",
     "static/media/particle-life.mp4": "/static/media/particle-life.34df669e19b869a5cef5.mp4",
@@ -9,6 +9,8 @@
     "static/media/skilltree-card.mp4": "/static/media/skilltree-card.c06cc2b3b00372a7a1b7.mp4",
     "static/media/robot.mp4": "/static/media/robot.1405237d5dba042640d3.mp4",
     "static/media/me.png": "/static/media/me.c2c0d0902405a01a66db.png",
+    "static/media/rocket-simulation.mp4": "/static/media/rocket-simulation.0f7024098e50e3a6d8c1.mp4",
+    "static/media/Autoencoder.mp4": "/static/media/Autoencoder.6cf60d6aa78a38dcebf3.mp4",
     "static/media/asrv.webp": "/static/media/asrv.60e9fe07602128b5caac.webp",
     "static/media/react-native.png": "/static/media/react-native.f6b89d232c9bc9f828e5.png",
     "static/media/figma.png": "/static/media/figma.b08682c3a0753f59813f.png",
@@ -29,12 +31,12 @@
     "static/media/css.png": "/static/media/css.87f5b197963ce41cf34e.png",
     "static/media/javascript.webp": "/static/media/javascript.2888c0a080c1a9d407b0.webp",
     "index.html": "/index.html",
-    "main.d8638e00.css.map": "/static/css/main.d8638e00.css.map",
-    "main.b5938b47.js.map": "/static/js/main.b5938b47.js.map",
+    "main.777767c3.css.map": "/static/css/main.777767c3.css.map",
+    "main.87d5179d.js.map": "/static/js/main.87d5179d.js.map",
     "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d8638e00.css",
-    "static/js/main.b5938b47.js"
+    "static/css/main.777767c3.css",
+    "static/js/main.87d5179d.js"
   ]
 }
