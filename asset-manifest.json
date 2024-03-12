@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.1d0f3bca.css",
-    "main.js": "/static/js/main.50a914a9.js",
+    "main.js": "/static/js/main.34a5b48b.js",
     "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
     "static/media/hyper-life.mp4": "/static/media/hyper-life.977ac639994d78a7ee4d.mp4",
     "static/media/particle-life.mp4": "/static/media/particle-life.34df669e19b869a5cef5.mp4",
@@ -32,11 +32,11 @@
     "static/media/javascript.webp": "/static/media/javascript.2888c0a080c1a9d407b0.webp",
     "index.html": "/index.html",
     "main.1d0f3bca.css.map": "/static/css/main.1d0f3bca.css.map",
-    "main.50a914a9.js.map": "/static/js/main.50a914a9.js.map",
+    "main.34a5b48b.js.map": "/static/js/main.34a5b48b.js.map",
     "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1d0f3bca.css",
-    "static/js/main.50a914a9.js"
+    "static/js/main.34a5b48b.js"
   ]
 }
