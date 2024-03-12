@@ -14,9 +14,9 @@
     border-radius: 10px;
     flex-direction: column;
     position: relative;
-    transition: transform .01s ease-in-out, opacity .2s ease-in-out;
-    -moz-transition: transform .01s ease-in-out, opacity .2s ease-in-out;
-    background-color: var(--bg-color);
+    transition: transform .01s ease-in-out, opacity .1s ease-in-out;
+    -moz-transition: transform .01s ease-in-out, opacity .1s ease-in-out;
+    background: linear-gradient(to right, #222222, #666666, #222222);
 }
 
 .card.inactive {

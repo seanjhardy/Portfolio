@@ -1,6 +1,7 @@
 {
   "name": "portfolio",
   "version": "1.0.0",
+  "homepage": "https://www.seanjhardy.com/",
   "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",

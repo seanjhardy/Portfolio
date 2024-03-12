@@ -1,13 +1,15 @@
 import "./card.css"
-import {useEffect, useRef} from "react";
+import {useEffect, useRef, useState} from "react";
+import {clamp} from "../../modules/GUIHelper";
 
-export const Card = ({children, style={}, rotationEnabled=true, glowAbove=true, allowHide=false}) => {
+export const Card = ({children, style={}, rotationEnabled=true,
+                       glowAbove=true, allowHide=false, onClick=undefined}) => {
   const ref = useRef();
+  const [bounds, setBounds] = useState({width: 0, height: 0})
 
-  function transforms(x, y, el) {
-    let box = el.getBoundingClientRect();
-    let calcX = -(y - (box.height / 2)) / 100;
-    let calcY = (x - (box.width / 2)) / 250;
+  function transforms(x, y, width, height) {
+    let calcX = -(y - (height / 2)) / 100;
+    let calcY = (x - (width / 2)) / 250;
 
     if (!rotationEnabled) return ""
 
@@ -16,8 +18,8 @@ export const Card = ({children, style={}, rotationEnabled=true, glowAbove=true, 
       + "   rotateY("+ calcY +"deg)";
   };
 
-  function transformElement(el, xyEl) {
-    el.style.transform  = transforms.apply(null, xyEl);
+  function transformElement(el, xyWH) {
+    el.style.transform  = transforms.apply(null, xyWH);
   }
 
   function approachValue(currentValue, targetValue) {
@@ -26,15 +28,15 @@ export const Card = ({children, style={}, rotationEnabled=true, glowAbove=true, 
   }
 
   useEffect(() => {
+    const bounds = ref.current.getBoundingClientRect()
+    setBounds({width: bounds.width, height: bounds.height})
+
     ref.current.style.setProperty("--allow-hide", allowHide)
 
     ref.current.onmousemove = function (e) {
-      let bounds = ref.current.getBoundingClientRect();
-      let xy = [e.clientX - bounds.left, e.clientY - bounds.top];
-      let position = xy.concat([ref.current]);
-
+      let xyWH = [e.layerX, e.layerY, bounds.width, bounds.height];
       window.requestAnimationFrame(function () {
-        transformElement(ref.current, position);
+        transformElement(ref.current, xyWH);
       });
     }
 
@@ -52,17 +54,15 @@ export const Card = ({children, style={}, rotationEnabled=true, glowAbove=true, 
       for (const card of document.getElementsByClassName("card")) {
         card.classList.remove("inactive")
       }
-
-      let bounds = ref.current.getBoundingClientRect();
-      let xy = [e.clientX - bounds.left, e.clientY - bounds.top];
+      let xyWH = [clamp(0, e.layerX, bounds.width), clamp(0, e.layerY, bounds.height), bounds.width, bounds.height];
       let iterations = 0;
       const animation = setInterval(() => {
-        xy = [approachValue(xy[0], (bounds.right - bounds.left) / 2), approachValue(xy[1],
-          (bounds.bottom - bounds.top) / 2)]
-        let position = xy.concat([ref.current]);
+        xyWH = [approachValue(xyWH[0], bounds.width/2),
+          approachValue(xyWH[1],bounds.height/2),
+        bounds.width, bounds.height]
 
         window.requestAnimationFrame(function () {
-          transformElement(ref.current, position);
+          transformElement(ref.current, xyWH);
         });
 
         iterations += 1;
@@ -74,7 +74,9 @@ export const Card = ({children, style={}, rotationEnabled=true, glowAbove=true, 
   }, [ref.current])
 
   return (
-    <div className={"card-container " + (rotationEnabled ? "scaleup" : "")} style={style}>
+    <div className={"card-container " + (rotationEnabled ? "scaleup" : "")}
+         style={{...style, cursor: onClick ? "pointer" : undefined}}
+        onClick={onClick}>
       <div className={"card"} ref={ref}>
         {!glowAbove && (
           <div style={{backgroundColor: "transparent", width: "100%", zIndex: 999}}>

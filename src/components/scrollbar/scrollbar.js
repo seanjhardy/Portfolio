@@ -20,7 +20,6 @@ export const Scrollbar = () => {
 
   const config = {
     glowDuration: 700,
-    maximumGlowPointSpacing: 10,
   }
 
   const rand = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min,
@@ -29,15 +28,30 @@ export const Scrollbar = () => {
   const withUnit = (value, unit) => `${value}${unit}`,
     px = value => withUnit(value, "px");
 
-  const calcDistance = (a, b) => {
-    const diffX = b.x - a.x,
-      diffY = b.y - a.y;
-
-    return Math.sqrt(Math.pow(diffX, 2) + Math.pow(diffY, 2));
-  }
-
   const appendElement = element => scrollbar.current.appendChild(element),
     removeElement = (element, delay) => setTimeout(() => scrollbar.current.removeChild(element), delay);
+
+  const createParticle = (position, lastPosition) => {
+    const particle = document.createElement("div");
+
+    particle.className = "particle";
+    particle.style.top = px(position.y);
+    const speedMultiplier = Math.max(Math.min((position.speed / 10) ** 4, 1), 0)
+    particle.style.backgroundColor = interpolateColour("#51198a", "#ac4de8", speedMultiplier)
+
+    const xSpeed = (Math.random() - 0.5) * 100
+    const ySpeed = (Math.random() - 0.5) * 40 + (Math.sign(position.y - lastPosition.y) * 50 * speedMultiplier)
+    const duration = 2000
+    particle.style.setProperty("--duration", `${duration}ms`);
+
+    particle.animate([
+      {transform: `translate(${xSpeed}px, ${ySpeed}px)`},
+    ],{duration: duration, easing: 'linear'});
+
+    appendElement(particle)
+
+    removeElement(particle, duration);
+  }
 
   const createGlowPoint = position => {
     const glow = document.createElement("div");
@@ -55,24 +69,14 @@ export const Scrollbar = () => {
     removeElement(glow, config.glowDuration);
   }
 
-  const determinePointQuantity = distance => Math.max(
-    Math.floor(distance / config.maximumGlowPointSpacing),
-    1
-  );
-
   const createGlow = (last, current) => {
-    const distance = calcDistance(last, current),
-      quantity = determinePointQuantity(distance);
-
-    const dx = (current.x - last.x) / quantity,
-      dy = (current.y - last.y) / quantity;
-
+    const dy = (current.y - last.y);
     const speed = Math.sqrt(dy * dy);
-    Array.from(Array(quantity)).forEach((_, index) => {
-      const x = last.x + dx * index,
-        y = last.y + dy * index;
-      createGlowPoint({ x, y, speed});
-    });
+
+    createGlowPoint({ x: current.x, y: current.y, speed});
+    if (speed > 5) {
+      createParticle({x: current.x, y: current.y, speed}, last);
+    }
   }
 
 
@@ -88,8 +92,9 @@ export const Scrollbar = () => {
 
   useEffect(() => {
     scrollbar.current.style.setProperty("--scroll", `${rounded}px`);
-    const scrollbarPos = ratio * (scrollbar.current.getBoundingClientRect().height - scrollbarThumb.current.getBoundingClientRect().height)
-    handleOnMove({clientX: 0, clientY: scrollbarPos + scrollbarThumb.current.getBoundingClientRect().height*0.5})
+    const thumbHeight = scrollbarThumb.current.getBoundingClientRect().height
+    const scrollbarPos = ratio * (scrollbar.current.offsetHeight - thumbHeight)
+    handleOnMove({clientX: 0, clientY: scrollbarPos + thumbHeight*0.5})
 
     scrollbarThumb.current.style.setProperty("--scroll", `${scrollbarPos}px`);
     scrollbarThumb.current.style.setProperty("--ratio", `${ratio}`);

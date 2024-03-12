@@ -48,6 +48,18 @@
     animation: opacity var(--duration) ease-out forwards;
 }
 
+.particle {
+    position: absolute;
+    pointer-events: none;
+    width: 4px;
+    height: 4px;
+    border-radius: 50px;
+    animation: opacity var(--duration) ease-out forwards;
+    background-color: var(--purple);
+    opacity: 1;
+    z-index: 999;
+}
+
 @keyframes opacity {
     from {
         opacity: 1;

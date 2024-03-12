@@ -11,7 +11,6 @@ const SmoothScroll = ({ children }) => {
     rounded: 0,
     ratio: 0,
   });
-
   // 1.
   const windowSize = useWindowSize();
 
@@ -20,14 +19,11 @@ const SmoothScroll = ({ children }) => {
 
   // 3.
   useEffect(() => {
-    setBodyHeight();
-  }, [data, windowSize.height]);
-
-  const setBodyHeight = () => {
     document.body.style.height = `${
       scrollingContainerRef.current.getBoundingClientRect().height
     }px`;
-  };
+  }, [windowSize.height, scrollingContainerRef.current]);
+
 
   // 5.
   useEffect(() => {

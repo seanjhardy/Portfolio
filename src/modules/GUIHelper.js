@@ -19,6 +19,7 @@ const rbgToRgba = (colour, alpha = 1) => {
   return `rgba(${r},${g},${b},${alpha})`
 }
 
+
 export const deconstructRgba = (rgba) => {
   return rgba
     .replace(/[^\d,]/g, "")
@@ -41,4 +42,8 @@ export const interpolateColour = (colourA, colourB, progress) => {
     b: Math.round((b2 - b1) * progress + b1),
     a: Math.round((a2 - a1) * progress + a1),
   })
+}
+
+export const clamp = (min, x, max) => {
+  return Math.min(Math.max(min, x), max)
 }

@@ -110,17 +110,6 @@
     border-style: solid;
 }
 
-.particle {
-    position: absolute;
-    z-index: 2;
-    color: rgb(97,27,189);
-    box-shadow: 0 0 3px white;
-    font-size: 1rem;
-    animation-duration: 1500ms;
-    animation-fill-mode: forwards;
-    pointer-events: none;
-}
-
 .title {
     font-family: RussoOne, sans-serif;
     font-size: 30px;
@@ -164,4 +153,119 @@
     justify-content: flex-end;
     align-items: center;
     align-content: flex-start;
+}
+
+.project-popup {
+    position: relative;
+    min-width: 600px;
+    height: 90vh;
+    min-height: 300px;
+    max-height: 400px;
+    display: flex;
+    flex-direction: row;
+    background-color: #151515;
+    border-radius: 15px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: #611bbd;
+}
+
+.project-popup span {
+    color: white;
+    font-family: RussoOne, sans-serif;
+    text-align: left;
+}
+
+.popup-header {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 20px;
+    border-top-left-radius: 12px;
+    border-bottom-right-radius: 15px;
+    background-color: #4e149680;
+}
+
+.popup-video-card {
+    height: calc(100% - 40px);
+    aspect-ratio: 1;
+    margin: 20px;
+    overflow: hidden;
+    border-radius: 15px;
+    border: solid #611bbd 3px;
+    box-shadow: #000000 0px 5px 10px;
+}
+
+.close-btn {
+    position: absolute;
+    margin: 10px;
+    top: -60px;
+    right: 0px;
+    background-color: #222222;
+    border: solid 2px #555555;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    z-index: 999;
+    color: white;
+    font-size: 30px;
+    width: 40px;
+    cursor: pointer;
+    height: 40px;
+    transition: all .05s ease-in-out;
+    -moz-transition: all .05s ease-in-out;
+}
+
+.close-btn:hover {
+    transform: scale(1.1);
+}
+
+.star {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    transform: scale(0);
+    animation: 0.2s ease-out popupAnimation forwards;
+}
+
+.link-row {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.link {
+    padding: 5px 15px 5px 15px;
+    background-color: #4e1496;
+    border-color: #611bbd;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+}
+
+.link:hover {
+    transform: scale(1.05);
+}
+
+.scrollbox {
+    flex: 1;
+    overflow-y: scroll;
+    display: flex;
+    align-items: flex-start;
+    padding: 10px;
+    background-color: rgba(0,0,0,0.5);
+    border: #333333 solid 2px;
+    border-radius: 15px;
+}
+
+.scrollbox span::selection {
+    background-color: #611bbd;
+    color: white;
 }

@@ -1,52 +1,37 @@
 import React, { useEffect, useRef, useState } from "react";
+import "./popup.css"
+import {useScrollContext} from "../SmoothScroll/scroll-context";
 
-export const Popup = ({ closePop, children, style = {} }) => {
-  const animatedValue = useRef(0);
-  const [isOpen, setIsOpen] = useState(true);
+export const Popup = ({show, onClose, children, style = {} }) => {
+  const { previous, rounded} = useScrollContext();
+  const ref = useRef()
+  const popupBody = useRef()
 
   useEffect(() => {
-    animatedValue.current = 1;
-  }, []);
+    popupBody.current.classList.toggle('active');
+  }, [show])
 
-  const handleClose = () => {
-    setIsOpen(false);
-    closePop();
-  };
-
-  const translateAnimation = animatedValue.current;
+  useEffect(() => {
+    ref.current.style.setProperty("--scroll", `${rounded}px`);
+  }, [rounded]);
 
   return (
-    <>
-      {isOpen && (
-        <div
-          style={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            backgroundColor: "rgba(0, 0, 0, 0.8)",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-          onClick={handleClose}
-        >
-          <div
-            style={{
-              width: "80%",
-              backgroundColor: "#fff",
-              padding: "20px",
-              borderRadius: "8px",
-              transform: `scale(${translateAnimation})`,
-              ...style,
-            }}
-            onClick={(e) => e.stopPropagation()}
-          >
-            {children}
-          </div>
-        </div>
-      )}
-    </>
+    <div id="popup"
+         className="popup"
+         style={{display: show ? "flex" : "none"}}
+         ref={ref}
+         onClick={(e) => {
+           console.log(e)
+           onClose()
+         }}>
+      <div className={"popup-content"}
+           ref={popupBody}
+           style={style}
+           onClick={(e) => {
+             e.stopPropagation();
+           }}>
+        {children}
+      </div>
+    </div>
   );
 };
