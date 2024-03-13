@@ -21,7 +21,6 @@ export const Popup = ({show, onClose, children, style = {} }) => {
          style={{display: show ? "flex" : "none"}}
          ref={ref}
          onClick={(e) => {
-           console.log(e)
            onClose()
          }}>
       <div className={"popup-content"}

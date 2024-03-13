@@ -6,6 +6,7 @@ export const Card = ({children, style={}, rotationEnabled=true,
                        glowAbove=true, allowHide=false, onClick=undefined}) => {
   const ref = useRef();
   const [bounds, setBounds] = useState({width: 0, height: 0})
+  const cardRef = useRef();
 
   function transforms(x, y, width, height) {
     let calcX = -(y - (height / 2)) / 100;
@@ -30,6 +31,17 @@ export const Card = ({children, style={}, rotationEnabled=true,
   useEffect(() => {
     const bounds = ref.current.getBoundingClientRect()
     setBounds({width: bounds.width, height: bounds.height})
+
+    cardRef.current.onmouseenter = (e) => {
+      for (const video of cardRef.current.getElementsByClassName("video")) {
+        video.play()
+      }
+    }
+    cardRef.current.onmouseleave = (e) => {
+      for (const video of cardRef.current.getElementsByClassName("video")) {
+        video.pause()
+      }
+    }
 
     ref.current.style.setProperty("--allow-hide", allowHide)
 
@@ -75,6 +87,7 @@ export const Card = ({children, style={}, rotationEnabled=true,
 
   return (
     <div className={"card-container " + (rotationEnabled ? "scaleup" : "")}
+         ref={cardRef}
          style={{...style, cursor: onClick ? "pointer" : undefined}}
         onClick={onClick}>
       <div className={"card"} ref={ref}>

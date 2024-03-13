@@ -68,6 +68,15 @@
 }
 
 @media only screen and (max-width: 1200px) {
+    .header-container {
+        width: 90%
+    }
+    .card-view {
+        width: 80%
+    }
+}
+
+@media only screen and (max-width: 900px) {
     .flip {
         flex-direction: column;
         align-items: center;
@@ -79,9 +88,25 @@
         align-content: center;
         margin-left: 10px;
     }
+    .project-popup {
+        height: 80vh !important;
+        max-height: 800px !important;
+        min-height: 400px !important;
+    }
+    .project-popup-bg {
+        flex-direction: column-reverse !important;
+        overflow-y: scroll;
+    }
+    .popup-header {
+        border-radius: 0 0 0 0 !important;
+    }
+    .popup-video-card {
+        min-height: 300px;
+        height: 300px;
+    }
 }
+@media only screen and (max-width: 600px) {
 
-@media only screen and (max-width: 760px) {
     .header{
         flex-direction: column;
         align-items: center;
@@ -157,17 +182,23 @@
 
 .project-popup {
     position: relative;
-    min-width: 600px;
     height: 90vh;
-    min-height: 300px;
+    min-height: 250px;
     max-height: 400px;
     display: flex;
     flex-direction: row;
-    background-color: #151515;
+    padding: 3px;
     border-radius: 15px;
-    border-width: 3px;
-    border-style: solid;
-    border-color: #611bbd;
+    background: linear-gradient(to bottom right, #8f3bff, #4e1496 30%, #4e1496,#611bbd);
+    box-shadow: #4e1496 0 0 15px;
+}
+
+.project-popup-bg {
+    display: flex;
+    border-radius: 15px;
+    height: 100%;
+    width: 100%;
+    background-color: #111111;
 }
 
 .project-popup span {
@@ -195,7 +226,6 @@
     margin: 20px;
     overflow: hidden;
     border-radius: 15px;
-    border: solid #611bbd 3px;
     box-shadow: #000000 0px 5px 10px;
 }
 
@@ -261,7 +291,7 @@
     align-items: flex-start;
     padding: 10px;
     background-color: rgba(0,0,0,0.5);
-    border: #333333 solid 2px;
+    border: #ffffff30 solid 2px;
     border-radius: 15px;
 }
 

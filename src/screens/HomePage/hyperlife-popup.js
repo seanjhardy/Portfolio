@@ -1,14 +1,15 @@
 import {Popup} from "../../components/popup/popup";
 import {useEffect, useRef} from "react";
+import {ProjectPopup} from "./project-popup";
 
 export const HyperlifePopup = ({show, onClose}) => {
 
   return (
-    <Popup show={show} onClose={onClose} style={{width: "60%"}} >
-      <div className={"project-popup"}>
-        <div className={"close-btn"} onClick={onClose}>
-          <img src={require("../../images/icons/close.png")} style={{width: 20, height: 20, objectFit: "contain"}}/>
-        </div>
+    <Popup show={show} onClose={onClose} style={{width: "70%", minWidth: 400, position: "relative"}} >
+      <div className={"close-btn"} onClick={onClose}>
+        <img src={require("../../images/icons/close.png")} style={{width: 20, height: 20, objectFit: "contain"}}/>
+      </div>
+      <ProjectPopup>
         <div style={{flex: 1, display: "flex", flexDirection: "column"}}>
           <div className={"popup-header"}>
             <span className={"subtitle"}
@@ -56,7 +57,7 @@ export const HyperlifePopup = ({show, onClose}) => {
             <source src={require("../../videos/hyper-life.mp4")} type="video/mp4"/>
           </video>
         </div>
-      </div>
+      </ProjectPopup>
     </Popup>
   )
 }

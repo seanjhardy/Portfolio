@@ -11,6 +11,7 @@ const SmoothScroll = ({ children }) => {
     rounded: 0,
     ratio: 0,
   });
+
   // 1.
   const windowSize = useWindowSize();
 
@@ -18,10 +19,18 @@ const SmoothScroll = ({ children }) => {
   const scrollingContainerRef = useRef();
 
   // 3.
-  useEffect(() => {
+  const handleResize = () => {
     document.body.style.height = `${
       scrollingContainerRef.current.getBoundingClientRect().height
     }px`;
+  }
+  useEffect(() => {
+    handleResize()
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize)
+    }
   }, [windowSize.height, scrollingContainerRef.current]);
 
 
@@ -32,10 +41,11 @@ const SmoothScroll = ({ children }) => {
 
   const smoothScrollingHandler = () => {
     const current = window.scrollY;
+    const docHeight = document.body.offsetHeight
 
     setData((data) => {
       const rounded = Math.round(data.previous * 100) / 100;
-      const ratio = data.previous / (scrollingContainerRef.current.getBoundingClientRect().height - window.innerHeight)
+      const ratio = data.previous / (docHeight - window.innerHeight)
       scrollingContainerRef.current.style.transform = `translateY(-${rounded}px)`;
 
       return {
@@ -61,6 +71,7 @@ const SmoothScroll = ({ children }) => {
         height: "100%",
         overflow: "hidden",
         minHeight: "100%",
+        backgroundColor: "black",
       }}>
         <div ref={scrollingContainerRef} style={{minHeight: "100%"}}>
           {children}

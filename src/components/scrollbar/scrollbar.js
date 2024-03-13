@@ -2,6 +2,7 @@ import {useEffect, useRef, useState} from "react";
 import {useScrollContext} from "../SmoothScroll/scroll-context";
 import "./scrollbar.css"
 import {interpolateColour} from "../../modules/GUIHelper";
+import {isMobile} from "react-device-detect";
 
 export const Scrollbar = () => {
   const {updateScrollData, rounded, current, previous, ratio} = useScrollContext();
@@ -92,7 +93,7 @@ export const Scrollbar = () => {
 
   useEffect(() => {
     scrollbar.current.style.setProperty("--scroll", `${rounded}px`);
-    const thumbHeight = scrollbarThumb.current.getBoundingClientRect().height
+    const thumbHeight = scrollbarThumb.current.offsetHeight
     const scrollbarPos = ratio * (scrollbar.current.offsetHeight - thumbHeight)
     handleOnMove({clientX: 0, clientY: scrollbarPos + thumbHeight*0.5})
 
@@ -104,17 +105,27 @@ export const Scrollbar = () => {
     const handleMove = (e) => {
       const scrollChange = ((e.clientY - 45) / (window.innerHeight - 90)) *
         (window.document.body.offsetHeight - window.innerHeight)
-      window.scrollTo(0, scrollChange)
+      window.scrollTo({left: 0, top: scrollChange, behavior: "instant"})
+      updateScrollData({ease: 1, current: scrollChange,
+        previous: scrollChange, ratio: scrollChange / (document.body.offsetHeight - window.innerHeight), rounded: scrollChange})
     }
 
     scrollbarThumb.current.onmousedown = (e) => {
       e.stopPropagation()
       document.body.style.cursor = 'pointer';
+      const scrollChange = window.scrollY
+      updateScrollData({ease: 1, current: scrollChange,
+        previous: scrollChange, ratio: scrollChange / (document.body.offsetHeight - window.innerHeight),
+        rounded: scrollChange})
       window.addEventListener("mousemove", handleMove)
     }
     const removeHandler = () => {
       document.body.style.cursor = "default";
       window.removeEventListener("mousemove", handleMove)
+
+      const scrollChange = window.scrollY
+      updateScrollData({ease: isMobile ? 1 : 0.1, current: scrollChange,
+        previous: scrollChange, ratio: scrollChange / (document.body.offsetHeight - window.innerHeight), rounded: scrollChange})
     }
 
     window.addEventListener("mouseup", removeHandler)

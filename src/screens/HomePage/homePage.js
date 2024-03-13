@@ -52,9 +52,8 @@ export const HomePage = ({}) => {
                 <span
                   className={"subtitle"}>Fullstack Developer, <MagicText>Designer</MagicText>, Founder, Engineer</span>
                 <span className={"header-text"} style={{marginTop: 10}}>
-                Hi 👋 I'm Sean. I'm a 21-year-old developer, aspiring to build beautiful, functional products to improve people's lives.
-                I'm a fast learning, multidisciplinary, first-principles thinker who excels in communication,
-                creativity and problem-solving.</span>
+                Hi 👋 I'm Sean. I'm a 21-year-old developer, passionate about building beautiful, functional products to improve people's lives.
+                I'm a fast learner, highly multidisciplinary and I excel at product management, communication, and problem-solving.</span>
                 <div style={{flex: 1, minHeight: 20}}/>
                 <span className={"header-text"}>BSc Computer Science (1st class) - University of Southampton</span>
                 <span className={"header-text"}>A*A*A - Computer Science, Physics, Maths</span>
@@ -88,7 +87,7 @@ export const HomePage = ({}) => {
             info={"Mobile app to gamify self-improvement. 10k downloads, 500+ 5-star reviews."}
             style={{backgroundColor: "#000000", width: "100%"}}
           >
-            <video className={"video"} style={{marginTop: -100}} autoPlay loop muted>
+            <video className={"video"} loop muted>
               <source src={require("../../videos/skilltree-card.mp4")} type="video/mp4"/>
             </video>
           </CardOverlay>
@@ -109,7 +108,7 @@ export const HomePage = ({}) => {
             info={"Evolutionary simulation of multicellular organisms with neural nets, simulated nervous systems, and predator/prey relationships"}
             style={{backgroundColor: "#000000", width: "100%", height: "100%"}}
           >
-            <video className={"video"} autoPlay loop muted>
+            <video className={"video"} loop muted>
               <source src={require("../../videos/hyper-life.mp4")} type="video/mp4"/>
             </video>
           </CardOverlay>
@@ -120,7 +119,7 @@ export const HomePage = ({}) => {
             info={"A high-speed simulation of particle interactions, generating life-like behaviour."}
             style={{backgroundColor: "#000000", width: "100%", height: "100%"}}
           >
-            <video className={"video"} autoPlay loop muted>
+            <video className={"video"} loop muted>
               <source src={require("../../videos/particle-life.mp4")} type="video/mp4"/>
             </video>
           </CardOverlay>
@@ -131,7 +130,7 @@ export const HomePage = ({}) => {
             info={"A simulation of electric fields with field lines, equipotential lines,and beautiful visualisations"}
             style={{backgroundColor: "#000000", width: "100%", height: "100%"}}
           >
-            <video className={"video"} autoPlay loop muted>
+            <video className={"video"} loop muted>
               <source src={require("../../videos/electric-fields.mp4")} type="video/mp4"/>
             </video>
           </CardOverlay>
@@ -142,7 +141,7 @@ export const HomePage = ({}) => {
             info={"A 2D rocket builder and flight simulator, with procedural parallax landscapes, realistic collisions and an intuitive UI"}
             style={{backgroundColor: "#000000", width: "100%", height: "100%"}}
           >
-            <video className={"video"} autoPlay loop muted>
+            <video className={"video"} loop muted>
               <source src={require("../../videos/rocket-simulation.mp4")} type="video/mp4"/>
             </video>
           </CardOverlay>
@@ -153,7 +152,7 @@ export const HomePage = ({}) => {
             info={"An autoencoder neural network for 2.5D environment reconstruction and policy guiding"}
             style={{backgroundColor: "#000000", width: "100%", height: "100%"}}
           >
-            <video className={"video"} autoPlay loop muted>
+            <video className={"video"} loop muted>
               <source src={require("../../videos/Autoencoder.mp4")} type="video/mp4"/>
             </video>
           </CardOverlay>
@@ -164,7 +163,7 @@ export const HomePage = ({}) => {
             info={"A bipedal walking robot with depth sensing, movement using inverse kinematics"}
             style={{backgroundColor: "#000000", width: "100%"}}
           >
-            <video width={450} height={400} autoPlay loop muted>
+            <video className={"video"} width={450} height={400} loop muted>
               <source src={require("../../videos/robot.mp4")} type="video/mp4"/>
             </video>
           </CardOverlay>

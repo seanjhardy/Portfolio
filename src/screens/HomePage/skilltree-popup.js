@@ -1,20 +1,22 @@
 import {Popup} from "../../components/popup/popup";
 import {useEffect, useRef} from "react";
+import {ProjectPopup} from "./project-popup";
 
 export const SkilltreePopup = ({show, onClose}) => {
 
   return (
-    <Popup show={show} onClose={onClose} style={{width: "60%"}} >
-      <div className={"project-popup"}>
-        <div className={"close-btn"} onClick={onClose}>
-          <img src={require("../../images/icons/close.png")} style={{width: 20, height: 20, objectFit: "contain"}}/>
-        </div>
+    <Popup show={show} onClose={onClose} style={{width: "70%", minWidth: 400, position: "relative"}} >
+      <div className={"close-btn"} onClick={onClose}>
+        <img src={require("../../images/icons/close.png")} style={{width: 20, height: 20, objectFit: "contain"}}/>
+      </div>
+      <ProjectPopup>
         <div style={{flex: 1, display: "flex", flexDirection: "column"}}>
           <div className={"popup-header"}>
             <span className={"subtitle"}
                   style={{fontSize: 25}}>Skilltree</span>
             <div style={{flex: 1}}/>
-            <div style={{backgroundColor: "rgba(0,0,0,0.5)", borderRadius: 10, padding: 5, paddingLeft: 10, paddingRight: 10,
+            <div style={{backgroundColor: "rgba(0,0,0,0.5)",
+              borderRadius: 10, padding: 5, paddingLeft: 10, paddingRight: 10,
               display: "flex", justifyContent: "center", alignItems: "center"}}>
               <span style={{fontFamily: "Russo One", color: "#FFCE00", marginRight: 5}}>4.8</span>
               <img src={require("../../images/icons/star.png")} className={"star"}
@@ -44,7 +46,8 @@ export const SkilltreePopup = ({show, onClose}) => {
                 cardio, quitting video games/social media/junk food, visualisation, sleep, building routines, eating healthily and many more.
                 <br/><br/>
                 This role required building and designing our app from scratch using a React Native front-end, NodeJS backend,
-                and MongoDB database. I helped manage and mentor 3 junior developers, as well as other volunteer designers, content creators,
+                and MongoDB database, as well as building our landing-page using react. Additionally,
+                I helped manage and mentor 3 junior developers, as well as other volunteer designers, content creators,
                 and sound-designers.
                 <br/><br/>
                 Skilltree has an engaging, gamified design to appeal to young people and former gamers, and a minimalist mode for more
@@ -67,7 +70,7 @@ export const SkilltreePopup = ({show, onClose}) => {
             <source src={require("../../videos/skilltree-card.mp4")} type="video/mp4"/>
           </video>
         </div>
-      </div>
+      </ProjectPopup>
     </Popup>
   )
 }
