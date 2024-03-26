@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.8347f78c.css",
-    "main.js": "/static/js/main.a8bc0c53.js",
+    "main.js": "/static/js/main.1e79a4f5.js",
     "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
     "static/media/hyper-life.mp4": "/static/media/hyper-life.977ac639994d78a7ee4d.mp4",
     "static/media/particle-life.mp4": "/static/media/particle-life.34df669e19b869a5cef5.mp4",
@@ -10,9 +10,11 @@
     "static/media/skilltree-card.mp4": "/static/media/skilltree-card.c06cc2b3b00372a7a1b7.mp4",
     "static/media/robot.mp4": "/static/media/robot.1405237d5dba042640d3.mp4",
     "static/media/rocket-simulation.mp4": "/static/media/rocket-simulation.0f7024098e50e3a6d8c1.mp4",
+    "static/media/talos.jpg": "/static/media/talos.a08222d07bd3aaacba04.jpg",
     "static/media/Autoencoder.mp4": "/static/media/Autoencoder.6cf60d6aa78a38dcebf3.mp4",
     "static/media/me.png": "/static/media/me.c15816293c58bffabe4a.png",
     "static/media/asrv.webp": "/static/media/asrv.60e9fe07602128b5caac.webp",
+    "static/media/Journii.png": "/static/media/Journii.62b6ca21fe77062d6116.png",
     "static/media/react-native.png": "/static/media/react-native.f6b89d232c9bc9f828e5.png",
     "static/media/figma.png": "/static/media/figma.b08682c3a0753f59813f.png",
     "static/media/java.png": "/static/media/java.284bca3c88f057b9ffdc.png",
@@ -33,11 +35,11 @@
     "static/media/javascript.webp": "/static/media/javascript.2888c0a080c1a9d407b0.webp",
     "index.html": "/index.html",
     "main.8347f78c.css.map": "/static/css/main.8347f78c.css.map",
-    "main.a8bc0c53.js.map": "/static/js/main.a8bc0c53.js.map",
+    "main.1e79a4f5.js.map": "/static/js/main.1e79a4f5.js.map",
     "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.8347f78c.css",
-    "static/js/main.a8bc0c53.js"
+    "static/js/main.1e79a4f5.js"
   ]
 }
